@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 // import Logo, Container, Navitems
 import Logo from "../../Logo/Logo";
-import Container from "../../../hoc/Layout/elements/Container";
+import { Container } from "../../../hoc/Layout/elements";
 import NavItems from "../NavItems/NavItems";
 
 // FixedWrapper
