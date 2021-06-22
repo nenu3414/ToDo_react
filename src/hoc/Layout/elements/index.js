@@ -22,12 +22,10 @@ export const FormWrapper = styled.div`
   box-shadow: 0rem 0.5rem 3.5rem var(--shadow);
 `;
 
-const SytledForm = styled(Form)`
+export const StyledForm = styled(Form)`
   display: flex;
   position: relative;
   align-items: center;
   width: 100%;
   flex-direction: column;
 `;
-
-export default SytledForm;

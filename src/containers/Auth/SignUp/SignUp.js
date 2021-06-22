@@ -4,8 +4,7 @@ import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
 
-import { FormWrapper } from "../../../hoc/Layout/elements";
-import StyledForm from "../../../hoc/Layout/elements";
+import { FormWrapper, StyledForm } from "../../../hoc/Layout/elements";
 import Input from "../../../components/UI/Forms/Input/Input";
 import Button from "../../../components/UI/Forms/Button/Button";
 import Heading from "../../../components/UI/Headings/Heading";
