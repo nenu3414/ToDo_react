@@ -31,13 +31,13 @@ const Wrapper = styled.div`
 `;
 
 //Navbar
-const Navbar = () => {
+const Navbar = ({ loggedIn }) => {
   return (
     <FixedWrapper>
       <Container>
         <Wrapper>
           <Logo />
-          <NavItems />
+          <NavItems loggedIn={loggedIn} />
         </Wrapper>
       </Container>
     </FixedWrapper>

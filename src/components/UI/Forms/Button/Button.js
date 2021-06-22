@@ -4,6 +4,7 @@ import styled from "styled-components";
 const StyledButton = styled.button`
   width: 100%;
   outline: none;
+  margin-top: -10px;
   padding: 1.2rem 2rem;
   border-radius: 2rem;
   font-size: 1.2rem;
@@ -29,10 +30,10 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ children, disabled, ...rest }) => {
+const Button = ({ children, disabled, loading, ...rest }) => {
   return (
     <StyledButton disabled={disabled} {...rest}>
-      {children}
+      {loading ? loading : children}
     </StyledButton>
   );
 };
