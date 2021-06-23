@@ -7,7 +7,7 @@ const theme = {
     mainLighter: "#00A8E8",
     textColor: "#333",
     whiteColor: "#FFF",
-    errorRed: "#FF5757",
+    errorRed: "#FF3333",
     shadow: "rgba(0,0,0,.2)",
   },
 

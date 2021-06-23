@@ -13,6 +13,7 @@ import SignUp from "./containers/Auth/SignUp/SignUp";
 import Logout from "./containers/Auth/Logout/Logout";
 import VerifyEmail from "./containers/Auth/VerifyEmail/VerifyEmail";
 import RecoverPassword from "./containers/Auth/RecoverPassword/RecoverPassword";
+import Profile from "./containers/Auth/Profile/Profile";
 
 // App
 function App({ loggedIn, emailVerified }) {
@@ -29,6 +30,7 @@ function App({ loggedIn, emailVerified }) {
     routes = (
       <Switch>
         <Route exact path="/" component={Todos}></Route>
+        <Route exact path="/profile" component={Profile}></Route>
         <Route exact path="/logout" component={Logout}></Route>
         <Redirect to="/" />
       </Switch>

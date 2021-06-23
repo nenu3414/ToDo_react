@@ -10,10 +10,10 @@ export const Container = styled.div`
 
 export const FormWrapper = styled.div`
   width: 100%;
-  max-width: 60rem;
+  max-width: 55rem;
   border-radius: 0.7rem;
   margin: 0 auto;
-  padding: 4rem 5rem;
+  padding: 2rem 4rem 4rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
