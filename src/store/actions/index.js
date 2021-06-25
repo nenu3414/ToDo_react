@@ -8,3 +8,5 @@ export {
   editProfile,
   deleteUser,
 } from "./authActions";
+
+export { addTodo } from "./todoActions";
