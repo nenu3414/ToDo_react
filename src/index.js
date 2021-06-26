@@ -66,21 +66,19 @@ function AuthIsLoaded({ children }) {
 
 // Render ReactDOM
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <ReactReduxFirebaseProvider {...rrfProps}>
-        <BrowserRouter>
-          <ThemeProvider theme={theme}>
-            <>
-              <AuthIsLoaded>
-                <App />
-                <GlobalStyles />
-              </AuthIsLoaded>
-            </>
-          </ThemeProvider>
-        </BrowserRouter>
-      </ReactReduxFirebaseProvider>
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <>
+            <AuthIsLoaded>
+              <App />
+              <GlobalStyles />
+            </AuthIsLoaded>
+          </>
+        </ThemeProvider>
+      </BrowserRouter>
+    </ReactReduxFirebaseProvider>
+  </Provider>,
   root
 );

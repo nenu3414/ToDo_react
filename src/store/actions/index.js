@@ -9,4 +9,4 @@ export {
   deleteUser,
 } from "./authActions";
 
-export { addTodo } from "./todoActions";
+export { addTodo, deleteTodo, editTodo } from "./todoActions";

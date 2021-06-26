@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import styled from "styled-components";
@@ -6,9 +6,10 @@ import { firestoreConnect } from "react-redux-firebase";
 
 import Heading from "../../components/UI/Headings/Heading";
 import { Container } from "../../hoc/Layout/elements";
-import AddTodo from "./AddTodo/AddTodo";
+import InputTodo from "./InputTodo/InputTodo";
 import Loader from "../../components/UI/Loader/Loader";
 import Todo from "./Todo/Todo";
+import Button from "../../components/UI/Forms/Button/Button";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -34,7 +35,8 @@ const Content = styled.div`
   margin-top: 2rem;
 `;
 
-const Todos = ({ todos, requesting, requested, userId }) => {
+const Todos = ({ todos, requested, userId }) => {
+  const [isAdding, setisAdding] = useState(false);
   let content;
   if (!todos) {
     content = (
@@ -42,7 +44,10 @@ const Todos = ({ todos, requesting, requested, userId }) => {
         <Loader isWhite />
       </Content>
     );
-  } else if (!todos[userId] && requested[`todos/${userId}`]) {
+  } else if (
+    (!todos[userId] && requested[`todos/${userId}`]) ||
+    todos[userId].todos.length === 0
+  ) {
     content = (
       <Content>
         <Heading color="white" size="h2">
@@ -53,9 +58,12 @@ const Todos = ({ todos, requesting, requested, userId }) => {
   } else {
     content = (
       <Content>
-        {todos[userId].todos.map((todo) => (
-          <Todo key={todo.id} todo={todo} />
-        ))}
+        {todos[userId].todos
+          .slice(0)
+          .reverse()
+          .map((todo) => (
+            <Todo key={todo.id} todo={todo} />
+          ))}
       </Content>
     );
   }
@@ -70,7 +78,10 @@ const Todos = ({ todos, requesting, requested, userId }) => {
           <Heading bold size="h4" color="white">
             All you have to do for now...
           </Heading>
-          <AddTodo />
+          <Button color="main" contain onClick={() => setisAdding(true)}>
+            Add Todo
+          </Button>
+          <InputTodo opened={isAdding} close={() => setisAdding(false)} />
           {content}
         </InnerWrapper>
       </Container>
