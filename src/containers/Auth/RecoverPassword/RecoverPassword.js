@@ -52,7 +52,7 @@ const RecoverPassword = ({ error, loading, sendEmail }) => {
               loading={loading ? "Sending recovery email" : null}
               type="submit"
             >
-              Recover Email
+              Send Recovery Email
             </Button>
             <MessageWrapper>
               <Message error show={error}>

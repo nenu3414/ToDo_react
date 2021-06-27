@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 
 // import Layout, Home, Todos and Login
 import Layout from "./hoc/Layout/Layout";
-//import Home from "./containers/Home/Home";
 import Todos from "./containers/Todos/Todos";
 import Login from "./containers/Auth/Login/Login";
 import SignUp from "./containers/Auth/SignUp/SignUp";
@@ -22,6 +21,7 @@ function App({ loggedIn, emailVerified }) {
     routes = (
       <Switch>
         <Route exact path="/verify-email" component={VerifyEmail}></Route>
+        <Route exact path="/profile" component={Profile}></Route>
         <Route exact path="/logout" component={Logout}></Route>
         <Redirect to="/verify-email" />
       </Switch>

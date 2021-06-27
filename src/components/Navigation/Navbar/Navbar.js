@@ -13,6 +13,7 @@ const FixedWrapper = styled.header`
   position: fixed;
   background-color: var(--color-mainDark);
   padding: 0rem 2rem;
+  z-index: 150;
   top: 0;
   left: 0;
   width: 100%;

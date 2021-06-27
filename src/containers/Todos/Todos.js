@@ -33,9 +33,10 @@ const Content = styled.div`
   max-width: 60rem;
   flex-direction: column;
   margin-top: 2rem;
+  z-index: 100;
 `;
 
-const Todos = ({ todos, requested, userId }) => {
+const Todos = ({ todos, userId }) => {
   const [isAdding, setisAdding] = useState(false);
   let content;
   if (!todos) {
@@ -44,10 +45,15 @@ const Todos = ({ todos, requested, userId }) => {
         <Loader isWhite />
       </Content>
     );
-  } else if (
-    (!todos[userId] && requested[`todos/${userId}`]) ||
-    todos[userId].todos.length === 0
-  ) {
+  } else if (!todos[userId] || !todos[userId].todos) {
+    content = (
+      <Content>
+        <Heading color="white" size="h2">
+          You have no todos!
+        </Heading>
+      </Content>
+    );
+  } else if (todos[userId].todos.length === 0) {
     content = (
       <Content>
         <Heading color="white" size="h2">

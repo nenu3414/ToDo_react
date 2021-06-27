@@ -114,6 +114,16 @@ const deleteStart = (state) => {
   return { ...state, deleteUser: { ...state.deleteUser, loading: true } };
 };
 
+const deleteSuccess = (state) => {
+  return {
+    ...state,
+    profileEdit: {
+      ...state,
+      deleteUser: { ...state.deleteUser, loading: false, error: false },
+    },
+  };
+};
+
 const deleteFail = (state, payload) => {
   return {
     ...state,
@@ -195,6 +205,9 @@ const authReducer = (state = initialState, { type, payload }) => {
 
     case actions.DELETE_START:
       return deleteStart(state);
+
+    case actions.DELETE_SUCCESS:
+      return deleteSuccess(state);
 
     case actions.DELETE_FAIL:
       return deleteFail(state, payload);
