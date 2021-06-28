@@ -33,7 +33,7 @@ const Content = styled.div`
   max-width: 60rem;
   flex-direction: column;
   margin-top: 2rem;
-  z-index: 100;
+  z-index: 0;
 `;
 
 const Todos = ({ todos, userId }) => {

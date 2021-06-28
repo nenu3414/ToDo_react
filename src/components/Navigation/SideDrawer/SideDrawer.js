@@ -13,7 +13,7 @@ const FixedWrapper = styled.header`
   position: fixed;
   background-color: var(--color-mainDark);
   padding: 0rem 2rem;
-  z-index: 10;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
@@ -47,6 +47,7 @@ const Menu = styled.div`
   transform: translateY(${(props) => (props.opened ? "0%" : "-100%")});
   transition: all 0.1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
   display: none;

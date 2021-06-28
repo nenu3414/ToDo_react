@@ -13,7 +13,7 @@ const WrapperModal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 150;
+  z-index: 1;
   justify-content: center;
   opacity: ${({ opened }) => (opened ? "1" : "0")};
   visibility: ${({ opened }) => (opened ? "visible" : "hidden")};
